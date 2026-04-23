@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Light, Our God, Our Soul - 린사마</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; background-color: #fcfaf8; font-family: 'Nanum Myeongjo', serif; color: #444; overflow-x: hidden; }
+
+        /* 1. 헤더 배경 이미지 수정 */
+        .wedding-header {
+            height: 100vh;
+            /* images 폴더 안의 배경사진 파일명으로 수정하세요 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/header_bg.jpg') center/cover no-repeat; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+        }
+
+        .wedding-header h1 { font-size: 4.5rem; margin: 10px 0; letter-spacing: 10px; animation: fadeInDown 1.5s ease; }
+        .wedding-header p { font-size: 1.3rem; border-top: 1px solid rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.6); padding: 15px 40px; letter-spacing: 5px; animation: fadeInUp 1.5s ease; }
+        .section-title { text-align: center; padding: 100px 20px 40px; font-size: 2.2rem; color: #d4af37; letter-spacing: 5px; }
+        .profile-card { max-width: 750px; margin: 0 auto 50px; background: white; padding: 60px 40px; border-radius: 2px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); text-align: center; border: 1px solid #f1e7d0; }
+        .wedding-btn { display: inline-block; background-color: white; color: #d4af37; border: 2px solid #d4af37; padding: 18px 50px; font-size: 1.1rem; text-decoration: none; cursor: pointer; transition: all 0.4s ease; letter-spacing: 2px; font-weight: bold; font-family: 'Nanum Myeongjo', serif; }
+        .wedding-btn:hover { background-color: #d4af37; color: white; box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); transform: translateY(-3px); letter-spacing: 4px; }
+
+        /* 갤러리 이미지 비율 유지 */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px; max-width: 1200px; margin: 0 auto 50px; }
+        .gallery-item { background: white; padding: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.4s ease; border: 1px solid #f9f9f9; }
+        .gallery-item:hover { transform: scale(1.03) rotate(1deg); z-index: 10; }
+        .gallery-item img { width: 100%; height: auto; display: block; }
+
+        .input-group { display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px; }
+        .wedding-input { padding: 15px; border: 1px solid #f1e7d0; font-family: 'Nanum Myeongjo', serif; font-size: 1rem; outline: none; }
+        .message-board { text-align: left; max-height: 500px; overflow-y: auto; padding-right: 15px; }
+        .message-item { border-bottom: 1px inset #fcf3e3; padding: 20px 0; animation: fadeInUp 0.8s ease; }
+        .message-name { color: #d4af37; font-weight: bold; font-size: 1.1rem; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 80px 20px; font-size: 0.9rem; color: #aaa; background: #fff; }
+    </style>
+</head>
+<body>
+
+    <header class="wedding-header">
+        <p>우리의 여신님</p>
+        <h1>린</h1>
+        <p>모든 하루하루가 영광입니다.</p>
+    </header>
+
+    <div class="section-title">우리의 여신</div>
+    <div class="profile-card">
+        <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">god</p>
+        <h3 style="font-size: 2.5rem; margin: 0;">린님</h3>
+        <p style="color: #d4af37; margin-top: 10px; font-weight: bold;">@린민들의 여신님</p>
+        <hr style="width: 50px; border: 0; border-top: 2px solid #d4af37; margin: 35px auto;">
+        <p style="line-height: 2; font-size: 1.1rem;">
+            나의 빛, 나의 신, 나의 왕.<br>
+            그녀의 <strong>린동산</strong>으로 당신을 초대합니다.
+        </p>
+        <button class="wedding-btn" onclick="celebrateAndVisit('https://x.com/hanhyelin4')">
+            💕 린동산 입장하기 (Twitter) 💕
+        </button>
+    </div>
+
+    <div class="section-title">찬양하라!</div>
+    <div class="gallery">
+        <div class="gallery-item"><img src="images/cos1.jpg" alt="패비"></div>
+        <div class="gallery-item"><img src="images/cos2.jpg" alt="가시춘"></div>
+        <div class="gallery-item"><img src="images/cos3.jpg" alt="헬름"></div>
+        <div class="gallery-item"><img src="images/cos4.jpg" alt="바이퍼"></div>
+        <div class="gallery-item"><img src="images/cos5.jpg" alt="안젤리카"></div>
+        <div class="gallery-item"><img src="images/cos6.jpg" alt="에이메스"></div>
+        <div class="gallery-item"><img src="images/cos7.jpg" alt="유노"></div>
+        <div class="gallery-item"><img src="images/cos8.jpg" alt="카르티시아"></div>
+        <div class="gallery-item"><img src="images/cos9.jpg" alt="레제"></div>
+    </div>
+
+    <div class="section-title">축복의 보내기</div>
+    <div class="profile-card">
+        <div class="input-group">
+            <input type="text" id="guestName" class="wedding-input" placeholder="성함 (또는 닉네임)">
+            <textarea id="guestMessage" class="wedding-input" rows="3" placeholder="축복의 한마디를 남겨주세요."></textarea>
+            <button class="wedding-btn" onclick="addBlessing()">축복 전송하기</button>
+        </div>
+        <div id="messageBoard" class="message-board">
+            <div class="message-item">
+                <span class="message-name">익명</span>
+                <p style="margin: 8px 0;">린멘. ✿</p>
+                <small style="color: #ccc;">2026. 04. 23</small>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 린동산.우리의여신님을 맞이해라!.</footer>
+
+    <script>
+        function celebrateAndVisit(url) {
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#d4af37', '#ffffff'] });
+            setTimeout(() => { window.open(url, '_blank'); }, 1000);
+        }
+
+        function addBlessing() {
+            const name = document.getElementById('guestName');
+            const msg = document.getElementById('guestMessage');
+            if (!name.value || !msg.value) { alert("내용을 입력해주세요! ✨"); return; }
+            confetti({ particleCount: 80, spread: 50, origin: { y: 0.8 }, colors: ['#d4af37', '#ffffff'] });
+            const today = new Date();
+            const dateStr = `${today.getFullYear()}. ${String(today.getMonth() + 1).padStart(2, '0')}. ${String(today.getDate()).padStart(2, '0')}`;
+            const newItem = document.createElement('div');
+            newItem.className = 'message-item';
+            newItem.innerHTML = `<span class="message-name">${name.value}</span><p style="margin: 8px 0;">${msg.value}</p><small style="color: #ccc;">${dateStr}</small>`;
+            document.getElementById('messageBoard').prepend(newItem);
+            name.value = ""; msg.value = "";
+        }
+    </script>
+</body>
+</html>
